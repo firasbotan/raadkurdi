@@ -3,9 +3,7 @@ body {
   padding: 0;
 }
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+  padding: 0;
 }
 
 #myList{
@@ -107,6 +105,7 @@ main {
   
   #musicController audio {
     flex-grow: 1;
+
   }
   
   #currentSong {
@@ -131,12 +130,42 @@ main {
     margin-right: 10px;
     }
 
+
+/* slider image */
+
+
+.slider {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+  opacity: 1;
+}
+
+
+
+
+    
   /* responce */
 
   @media(max-width:600px){
     #myList{
         column-count: 1;
     }
+
+   
     
   }
 
@@ -144,7 +173,7 @@ main {
     #myList {
       column-count: 2;
     }
-  
+
     #myList li {
       width: 100%;
       display: inline-block;

@@ -47,7 +47,8 @@ function populateList(data){
             playAya(model.linkUrl, model.suratNameEn, listItem);
           });
         
-
+         
+          
 
 
     }
@@ -73,4 +74,25 @@ function populateList(data){
   }
 
 }
+
+
+// image sliser
+var slideIndex = 0;
+var slides = document.getElementsByClassName("slider")[0].getElementsByTagName("img");
+
+function showSlide() {
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].classList.add("active");
+  setTimeout(showSlide, 5000); // Change slide every 3 seconds
+}
+
+showSlide();
+
+
  
