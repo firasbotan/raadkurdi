@@ -9,6 +9,23 @@ function populateList(data){
  var myList = document.getElementById('myList');
  var activeItem = null; // Track the currently playing song item
 
+ var searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('input', function() {
+  var searchQuery = searchInput.value.toLowerCase();
+  var listItems = document.querySelectorAll('#myList li');
+
+  listItems.forEach(function(listItem) {
+    var suratName = listItem.querySelector('h4').textContent.toLowerCase();
+
+    if (suratName.includes(searchQuery)) {
+      listItem.style.display = 'block';
+    } else {
+      listItem.style.display = 'none';
+    }
+  });
+});
+
 
   data.forEach(model => {
     if(model !== null){
@@ -46,14 +63,11 @@ function populateList(data){
         listItem.addEventListener('click', function() {
             playAya(model.linkUrl, model.suratNameEn, listItem);
           });
-        
-         
-          
-
 
     }
     
   });
+  
 
 
   // Play the selected music

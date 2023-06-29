@@ -155,6 +155,28 @@ main {
 }
 
 
+/* search */
+#searchInput {
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  font-size: 18px;
+  background-color: transparent;
+  transition: border-color 0.3s;
+  color: #333;
+}
+
+#searchInput::placeholder {
+  color: #aaa;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
 
 
     
